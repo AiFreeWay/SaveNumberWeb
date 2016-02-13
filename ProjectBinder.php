@@ -4,3 +4,4 @@
     include("strategyes/StrategyesEnum.php");
     include("strategyes/Strategy.php");
     include("strategyes/TestStrategy.php");
+    include("utils/DBController.php");

@@ -7,11 +7,13 @@ class Main {
     private $mStrategy;
 
     public function Main() {
+        new DBController();
         $this->mUri = $_SERVER['REQUEST_URI'];
         $this->mStrategySelector = new StrategySelector();
         $this->mStrategy = $this->selectRequestStrategy();
         $response = $this->mStrategy->execute($this);
         echo $response;
+        DBController::closeConnection();
     }
 
     private function selectRequestStrategy() {
